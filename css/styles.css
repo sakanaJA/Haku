@@ -10828,34 +10828,24 @@ textarea.form-control-lg {
 html {
   height: 100%;
 }
-
 body {
   height: 100%;
   position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;  /* 追加：画面外へのスクロールを防ぐため */
 }
-/*body:before {*/
-/*  content: "";*/
-/*  position: fixed;*/
-/*  top: 0;*/
-/*  left: 0;*/
-/*  height: 100%;*/
-/*  width: 100%;*/
-/*  background-color: rgb(255, 128, 192);*/
-/*  opacity: 0.7;*/
-/*  z-index: 1;*/
-/*}*/
 
 video.bg-video {
   position: fixed;
   top: 50%;
   left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  width: 100%;       /* 100%に変更 */
+  height: 100%;      /* 100%に変更 */
   transform: translateX(-50%) translateY(-50%);
   z-index: 0;
   filter: brightness(114%); /* 明るさを150%に設定 */
+  object-fit: cover;  /* 追加：アスペクト比を保持しながら、コンテナに動画をフィットさせる */
 }
 
 @media (pointer: coarse) and (hover: none) {
@@ -10885,8 +10875,6 @@ video.bg-video {
   background-color: rgba(255, 130, 180,0.5); /* ホバー時のボタンの背景色を少し暗いピンク色に設定 */
   transform: translateY(-1px); /* ホバー時にボタンがわずかに上に移動する */
 }
-
-
 
 @media (min-width: 992px) {
   .social-icons {
